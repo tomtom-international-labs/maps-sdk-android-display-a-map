@@ -43,6 +43,7 @@ steps:
         with: 01.01-build-gradle.md
         issue: Changes
       - type: createPullRequestComment
+        pullRequest: Changes
         body: 02.00-add-dependencies.md
         file: app/build.gradle
         position: 33
