@@ -1,0 +1,14 @@
+# Setup
+
+In general you have two options for using a development environment:
+
+* [Android Studio](https://developer.android.com/studio/) or
+* Terminal + Gradle
+
+For simplicity reasons this course will provide you instructions on using the
+terminal and Gradle.
+
+Apart from that you will need an Android phone so that you will be able to install
+the creatd application on your own phone.
+
+Now let's cover the prerrequisites.

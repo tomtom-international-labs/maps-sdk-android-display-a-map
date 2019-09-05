@@ -1,19 +1,50 @@
-title: maps-sdk-android-search-along-a-route
-tagline: A brand new course on Learning Lab
+title: TomTom Maps SDK for Android - Search along a route
+tagline: 'Take your first steps in using the TomTom Search, Routing and Maps SDKs'
+tags:
+  - android
+  - tomtom-sdk
+  - routing
+  - maps
+  - search
+  - online
+
 description: >-
-  This tutorial shows how to use TomTom Maps SDK for Android to create an
-  application that helps a user find points of interest along a planned route.
+  In this course you will learn how to create an Android application that helps
+  a user find points of interest along a planned route using TomTom Maps SDK
+
 template:
   repo: maps-sdk-android-search-along-a-route-template
   name: maps-sdk-android-search-along-a-route
+
 before:
   - type: createIssue
     title: Welcome!
-    body: new-issue.md
+    body: 01-welcome.md
+    comments:
+      - 00-begin-here.md
+  - type: updateBranchProtection
+
 steps:
-  - title: First step
-    description: The first step in your course
-    event: issues.assigned
-    link: '{{ repoUrl }}'
-    actions:
-      - type: closeIssue
+- title: Welcome
+  description: Get the course started!
+  event: issues
+  link: '{{ repoUrl }}/issues/1'
+  actions:
+  - type: gate
+    left: '%payload.action%'
+    operator: ===
+    right: closed
+  - type: createPullRequest
+    title: Getting Started
+    body: 00_setup.md
+    head: setup
+    action_id: setup_pr
+  - type: respond
+    issue: '%actions.setup_pr.data.number%'
+    with: 00_setup_activities.md
+  - type: assignRegistrant
+    issue: '%actions.setup_pr.data.number%'
+  - type: respond
+    with: 00_goto_first_pr.md
+    data:
+      url: '%actions.setup_pr.data.html_url%'
