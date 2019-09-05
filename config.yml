@@ -18,9 +18,9 @@ template:
 before:
   - type: createIssue
     title: Welcome!
-    body: 01-welcome.md
+    body: 00.00-welcome.md
     comments:
-      - 00-begin-here.md
+      - 00.01-begin-here.md
   - type: updateBranchProtection
 
 steps:
@@ -35,15 +35,15 @@ steps:
     right: closed
   - type: createPullRequest
     title: Getting Started
-    body: 00_setup.md
+    body: 01.00-setup.md
     head: setup
     action_id: setup_pr
   - type: respond
     issue: '%actions.setup_pr.data.number%'
-    with: 00_setup_activities.md
+    with: 01.01-setup-activities.md
   - type: assignRegistrant
     issue: '%actions.setup_pr.data.number%'
   - type: respond
-    with: 00_goto_first_pr.md
+    with: 01.02-goto-first-pr.md
     data:
       url: '%actions.setup_pr.data.html_url%'
