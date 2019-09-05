@@ -42,3 +42,7 @@ steps:
         with: 01.02-goto-first-pr.md
         data:
           url: '%actions.setup_pr.data.html_url%'
+      - type: createPullRequestComment
+        body: 01.03-add-dependencies.md
+        file: app/build.gradle
+        position: 33
