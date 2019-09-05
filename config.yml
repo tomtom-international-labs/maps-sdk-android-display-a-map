@@ -18,7 +18,6 @@ before:
     body: 00.00-welcome.md
     comments:
       - 00.01-begin-here.md
-  - type: updateBranchProtection
 steps:
   - title: Welcome
     description: Get the course started!
