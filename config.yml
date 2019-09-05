@@ -71,11 +71,6 @@ steps:
           - type: respond
             with: 02.01-bad-dependencies.md
             issue: Changes
-      - type: createPullRequestComment
-        body: 03.00-activity.md
-        file: app/src/
-        position: 3
-        pullRequest: '%actions.metaPR2.data.number%'
       - type: createReview
         event: APPROVE
         body: approve.md
