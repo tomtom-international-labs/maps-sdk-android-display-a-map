@@ -17,6 +17,7 @@ before:
     title: Welcome
     body: 00.00-welcome.md
     comments:
+      - 01.00-setup.md
       - 00.02-open-pr.md
   - type: updateBranchProtection
 
@@ -39,16 +40,16 @@ steps:
       - type: closeIssue
         issue: Welcome
       - type: respond
-        with: 01.00-setup.md
+        with: 01.01-build-gradle.md
         issue: Changes
       - type: createPullRequestComment
-        body: 01.03-add-dependencies.md
+        body: 02.00-add-dependencies.md
         file: app/build.gradle
         position: 33
 
   # Step 2: User adds dependencies
-  - title: Add the SDK dependencies
-    description: Add to the app dependencies to the TomTom SDK
+  - title: Extend app/build.gradle
+    description: Add the TomTom SDK dependencies to app/build.gradle
     event: push
     link: '{{ repoUrl }}/issues/2'
     actions:
@@ -63,46 +64,28 @@ steps:
         action_id: fileContents
         filename: 'app/build.gradle'
       - type: gate
-        left: '/^\s*<\s*h3\s*className\s*=\s*"\s*Box-title\s*d-flex\s*flex-justify-center\s*"\s*>\s*GradeBook\s*<\s*\/\s*h3\s*>/gm'
+        left: /^\s*implementation\s*\'com.tomtom.online:sdk-.*/gm
         operator: test
         right: '%actions.fileContents%'
         else:
           - type: respond
-            with: 01.03-bad-dependencies.md
+            with: 02.01-bad-dependencies.md
             issue: Changes
-      # - type: respond
-      #   with: 02_props.md
-      #   issue: Changes
-      # - type: createPullRequestComment
-      #   body: 02_import-child-component-activity.md
-      #   file: src/App.jsx
-      #   position: 3
-      #   pullRequest: '%actions.metaPR2.data.number%'
+      - type: createPullRequestComment
+        body: 03.00-activity.md
+        file: app/src/
+        position: 3
+        pullRequest: '%actions.metaPR2.data.number%'
+      - type: createReview
+        event: APPROVE
+        body: approve.md
+        pullRequest: Changes
 
-  # - title: Welcome
-  #   description: Get the course started!
-  #   event: issues
-  #   link: '{{ repoUrl }}/issues/1'
-  #   actions:
-  #     - type: gate
-  #       left: '%payload.action%'
-  #       operator: ===
-  #       right: closed
-  #     - type: createPullRequest
-  #       title: Getting Started
-  #       body: 01.00-setup.md
-  #       head: setup
-  #       action_id: setup_pr
-  #     - type: respond
-  #       issue: '%actions.setup_pr.data.number%'
-  #       with: 01.01-setup-activities.md
-  #     - type: assignRegistrant
-  #       issue: '%actions.setup_pr.data.number%'
-  #     - type: respond
-  #       with: 01.02-goto-first-pr.md
-  #       data:
-  #         url: '%actions.setup_pr.data.html_url%'
-  #     - type: createPullRequestComment
-  #       body: 01.03-add-dependencies.md
-  #       file: app/build.gradle
-  #       position: 33
+  # Step 3: Merge pull request
+  - title: Merge your pull request
+    event: pull_request.closed
+    description: Congrats on finishing the course!
+    actions:
+      - type: respond
+        with: congrats.md
+        issue: Changes
