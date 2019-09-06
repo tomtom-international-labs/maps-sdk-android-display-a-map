@@ -1,5 +1,5 @@
-title: TomTom Maps SDK for Android - Search along a route
-tagline: 'Take your first steps in using the TomTom Search, Routing and Maps SDKs'
+title: TomTom Maps SDK for Android - Display a Map
+tagline: 'Take your first steps in using the TomTom Map SDK'
 tags:
   - android
   - tomtom-sdk
@@ -7,8 +7,7 @@ tags:
   - maps
   - search
 description: >-
-  In this course you will learn how to create an Android application that helps
-  a user find points of interest along a planned route using TomTom Maps SDK
+  In this course you will learn how to create an Android application that displays a TomTom Map
 template:
   repo: maps-sdk-android-search-along-a-route-template
   name: lab-maps-sdk-android-search-along-a-route
