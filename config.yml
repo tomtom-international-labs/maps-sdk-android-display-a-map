@@ -116,7 +116,7 @@ steps:
         issue: Changes
 
   # Step 4: Display a map
-  - title: Display a map - Extend the Layout
+  - title: Display a map - Add the map fragment to the layout
     description: Extend the activity layout and add a MapFragment
     event: pull_request.opened
     link: '{{ repoUrl }}/pull/3'
@@ -138,7 +138,7 @@ steps:
         position: 4
 
   # Step 5: Tell the MainActivity about the TomTom map
-  - title: Display a map - Extend the MainActivity
+  - title: Display a map - MainActivity - Add TomtomMap
     description: Extend the MainActivity to display a map
     event: push
     link: '{{ repoUrl }}/pull/3'
@@ -151,9 +151,27 @@ steps:
         pullRequest: Display map
         action_id: metaPR3
       - type: createPullRequestComment
-        body: 05.00-display-map-on-create.md
+        body: 05.00-display-map-mainactivity-0.md
         file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
-        position: 29
+        position: 14
+
+  # Step 6:
+  - title: Display a map - MainActivity - Implement the OnMapReadyCallback
+    description: Extend the MainActivity to display a map
+    event: push
+    link: '{{ repoUrl }}/pull/3'
+    actions:
+      - type: gate
+        left: '%payload.ref%'
+        operator: ===
+        right: refs/heads/display-map
+      - type: getPullRequest
+        pullRequest: Display map
+        action_id: metaPR3
+      - type: createPullRequestComment
+        body: 05.00-display-map-mainactivity-1.md
+        file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
+        position: 12
       # - type: createReview
       #   event: APPROVE
       #   body: approve.md
@@ -165,5 +183,5 @@ steps:
     description: Congrats on finishing the course!
     actions:
       - type: respond
-        with: 04.10-congrats.md
+        with: 05.10-congrats.md
         issue: Display map
