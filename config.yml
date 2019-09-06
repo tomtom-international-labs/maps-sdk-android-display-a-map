@@ -114,10 +114,9 @@ steps:
       - type: respond
         with: congrats.md
         issue: Changes
-      - type: createPullRequest
-        title: Display map
-        body: 04.00-display-map.md
-        head: display-map
+      - type: respond
+        with: 04.00-display-map-open-pr.md
+        issue: Changes
 
   # Step 4: Display a map
   - title: Display a TomTom Map
