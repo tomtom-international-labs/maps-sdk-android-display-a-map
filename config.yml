@@ -24,8 +24,8 @@ before:
 steps:
 
   # Step 1: User opens a pull request after cloning and validating project builds
-  - title: Open a pull request
-    description: Welcome! Let's get started with our project.
+  - title: Get started
+    description: Welcome! Let's get started with our project and create our first pull request
     event: pull_request.opened
     link: '{{ repoUrl }}/issues/1'
     actions:
