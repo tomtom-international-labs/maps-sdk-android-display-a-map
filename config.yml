@@ -132,11 +132,7 @@ steps:
       - type: respond
         with: 04.00-display-map.md
         issue: Display map
-      - type: getPullRequest
-        pullRequest: Changes
-        action_id: metaPR3
       - type: createPullRequestComment
-        pullRequest: '%actions.metaPR3.data.number%'
         body: 04.01-display-map-layout.md
         file: app/src/main/res/layout/activity_main.xml
         position: 4
