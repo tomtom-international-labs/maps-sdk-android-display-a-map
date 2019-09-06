@@ -54,9 +54,9 @@ steps:
     link: '{{ repoUrl }}/pull/2'
     actions:
       - type: gate
-        left: '%payload.ref%'
+        left: '%payload.pull_request.head.ref%'
         operator: ===
-        right: refs/heads/changes
+        right: changes
       - type: getPullRequest
         pullRequest: Changes
         action_id: metaPR2
@@ -84,9 +84,9 @@ steps:
     link: '{{ repoUrl }}/pull/2'
     actions:
       - type: gate
-        left: '%payload.ref%'
+        left: '%payload.pull_request.head.ref%'
         operator: ===
-        right: refs/heads/changes
+        right: changes
       - type: getPullRequest
         pullRequest: Changes
         action_id: metaPR2
