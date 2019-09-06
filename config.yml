@@ -107,15 +107,12 @@ steps:
         pullRequest: Changes
 
   # Step: Merge pull request
-  - title: Merge your pull request
+  - title: Merge your first pull request
     event: pull_request.closed
     description: Congrats on finishing the first part of the course!
     actions:
       - type: respond
-        with: congrats.md
-        issue: Changes
-      - type: respond
-        with: 04.00-display-map-open-pr.md
+        with: 03.02-congrats.md
         issue: Changes
 
   # Step 4: Display a map
