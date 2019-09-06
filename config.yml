@@ -132,7 +132,11 @@ steps:
       - type: respond
         with: 04.00-display-map.md
         issue: Display map
+      - type: getPullRequest
+        pullRequest: Changes
+        action_id: metaPR3
       - type: createPullRequestComment
+        pullRequest: '%actions.metaPR3.data.number%'
         body: 04.01-display-map-layout.md
         file: app/src/main/res/layout/activity_main.xml
         position: 4
@@ -151,6 +155,7 @@ steps:
         pullRequest: Display map
         action_id: metaPR3
       - type: createPullRequestComment
+        pullRequest: '%actions.metaPR3.data.number%'
         body: 05.00-display-map-mainactivity-0.md
         file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
         position: 14
@@ -169,13 +174,14 @@ steps:
         pullRequest: Display map
         action_id: metaPR3
       - type: createPullRequestComment
+        pullRequest: '%actions.metaPR3.data.number%'
         body: 05.00-display-map-mainactivity-1.md
         file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
         position: 12
-      # - type: createReview
-      #   event: APPROVE
-      #   body: approve.md
-      #   pullRequest: Changes
+      - type: createReview
+        event: APPROVE
+        body: approve.md
+        pullRequest: Display map
 
   # Step 6: Merge pull request
   - title: Merge your pull request
