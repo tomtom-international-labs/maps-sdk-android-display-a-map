@@ -174,14 +174,28 @@ steps:
         body: 06.00-display-map-mainactivity.md
         file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
         position: 12
+
+  # Step 7
+  - title: Request and add the TomTom Maps API key to the project
+    description: Request and add the Maps API key to the project
+    event: push
+    link: '{{ repoUrl }}/pull/3'
+    actions:
+      - type: gate
+        left: '%payload.ref%'
+        operator: ===
+        right: refs/heads/display-map
+      - type: getPullRequest
+        pullRequest: Display map
+        action_id: metaPR3
       - type: respond
-        with: 06.02-request-map-key.md
+        with: 07.00-request-map-key.md
         issue: Display map
       - type: createPullRequestComment
         pullRequest: '%actions.metaPR3.data.number%'
-        body: 06.04-add-key-to-project.md
+        body: 07.02-add-key-to-project.md
         file: app/src/main/AndroidManifest.xml
-        position: 3
+        position: 4
       - type: createReview
         event: APPROVE
         body: approve.md
