@@ -46,7 +46,7 @@ steps:
         pullRequest: Changes
         body: 02.00-add-dependencies.md
         file: app/build.gradle
-        position: 35
+        position: 3
 
   # Step 2: User adds dependencies
   - title: Extend app/build.gradle
