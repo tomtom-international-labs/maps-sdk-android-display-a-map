@@ -119,7 +119,7 @@ steps:
         body: 04.00-display-map.md
         head: display-map
 
-  # Step 4: Dispaly a map
+  # Step 4: Display a map
   - title: Display a TomTom Map
     description: Create an Android activity using the TomTom Map API to display a map
     event: pull_request.opened
