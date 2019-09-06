@@ -72,7 +72,7 @@ steps:
       #       with: 02.00-bad-tomtom-repository.md
       #       issue: Changes
       - type: createPullRequestComment
-        pullRequest: '%actions.metaPR2.data.number%'
+        pullRequest: Changes
         body: 02.02-add-dependencies.md
         file: app/build.gradle
         position: 4
