@@ -73,7 +73,7 @@ steps:
       #       issue: Changes
       - type: createPullRequestComment
         pullRequest: Changes
-        body: 02.02-add-dependencies.md
+        body: 03.00-add-dependencies.md
         file: app/build.gradle
         position: 4
 
@@ -99,7 +99,7 @@ steps:
       #   right: '%actions.fileContents%'
       #   else:
       #     - type: respond
-      #       with: 02.02-bad-dependencies.md
+      #       with: 03.00-bad-dependencies.md
       #       issue: Changes
       - type: createReview
         event: APPROVE
