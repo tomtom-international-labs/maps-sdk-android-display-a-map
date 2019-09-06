@@ -20,3 +20,6 @@ https://developer.tomtom.com/terms-and-conditions).
 - [Search API](https://developer.tomtom.com/search-api/search-api-documentation)
 - [Traffic API](https://developer.tomtom.com/traffic-api/traffic-api-documentation)
 - [Geofencing API](https://developer.tomtom.com/geofencing-api-public-preview/geofencing-documentation)
+
+## Special thanks
+ This learning lab wouldn't be possible without our awesome [contributors](CONTRIBUTORS.md).
