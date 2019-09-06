@@ -6,3 +6,5 @@ List in alphabetical order.
 * Martin Migasiewicz - [@martinm82](https://github.com/martinm82 )
 
 * Mateusz Szczepanczyk - [@szczepanczyk](https://github.com/szczepanczyk)
+
+* Ryszard Sulkowski - [@rsulkowski](https://github.com/rsulkowski)
