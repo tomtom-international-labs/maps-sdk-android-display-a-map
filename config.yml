@@ -106,11 +106,51 @@ steps:
         body: approve.md
         pullRequest: Changes
 
-  # Step 4: Merge pull request
+  # Step: Merge pull request
+  - title: Merge your pull request
+    event: pull_request.closed
+    description: Congrats on finishing the first part of the course!
+    actions:
+      - type: respond
+        with: congrats.md
+        issue: Changes
+      - type: createPullRequest
+        title: Display map
+        body: 04.00-display-map.md
+        head: display-map
+
+  # Step 4: Dispaly a map
+  - title: Display a TomTom Map
+    description: Create an Android activity using the TomTom Map API to display a map
+    event: pull_request.opened
+    link: '{{ repoUrl }}/pull/3'
+    actions:
+      - type: gate
+        left: '%payload.pull_request.title%'
+        right: Display map
+        operator: ===
+        else:
+          - type: respond
+            with: Make sure the title of your PR is "Display map"
+            issue: Display map
+      - type: createPullRequestComment
+        body: 04.02-update-mainactivity.md
+        file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
+        position: 4
+      - type: createReview
+        event: APPROVE
+        body: approve.md
+        pullRequest: Display map
+      - type: createReview
+        event: APPROVE
+        body: approve.md
+        pullRequest: Display map
+
+  # Step 6: Merge pull request
   - title: Merge your pull request
     event: pull_request.closed
     description: Congrats on finishing the course!
     actions:
       - type: respond
         with: congrats.md
-        issue: Changes
+        issue: Display map
