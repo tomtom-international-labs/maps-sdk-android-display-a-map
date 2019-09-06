@@ -17,7 +17,7 @@ before:
     title: Welcome
     body: 00.00-welcome.md
     comments:
-      - 01.00-setup.md
+      - 00.01-setup.md
       - 00.02-open-pr.md
   - type: updateBranchProtection
 
@@ -47,8 +47,8 @@ steps:
         file: app/build.gradle
         position: 4
 
-  # Step 2: User adds dependencies
-  - title: Extend dependencies with TomTom SDK libraries
+  # Step 2: User adds SDK dependencies
+  - title: Add TomTom SDK dependencies
     description: Add the TomTom SDK dependencies to app/build.gradle
     event: push
     link: '{{ repoUrl }}/issues/2'

@@ -1,4 +1,4 @@
-## Step x: Merge your pull request
+## Step 3: Merge your pull request
 
 Now that we've approved the changes, it's time to merge the pull request.
 
