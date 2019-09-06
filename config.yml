@@ -43,13 +43,43 @@ steps:
         with: 01.01-build-gradle.md
         issue: Changes
       - type: createPullRequestComment
-        body: 02.00-add-dependencies.md
+        body: 02.00-add-tomtom-repository.md
+        file: build.gradle
+        position: 4
+
+  # Step 2: User adds TomTom Maven repository
+  - title: Add TomTom Maven repository
+    description: Add the TomTom Maven repository to top-level build.gradle
+    event: push
+    link: '{{ repoUrl }}/issues/2'
+    actions:
+      - type: gate
+        left: '%payload.ref%'
+        operator: ===
+        right: refs/heads/changes
+      - type: getPullRequest
+        pullRequest: Changes
+        action_id: metaPR2
+      - type: getFileContents
+        action_id: fileContents
+        filename: 'build.gradle'
+      - type: gate
+        left: /^\s*url\s*\"https:\/\/maven.tomtom.com\:8443\/nexus\/content\/repositories\/releases.*\"/gm
+        operator: test
+        right: '%actions.fileContents%'
+        else:
+          - type: respond
+            with: 02.00-bad-tomtom-repository.md
+            issue: Changes
+      - type: createPullRequestComment
+        pullRequest: '%actions.metaPR2.data.number%'
+        body: 02.02-add-dependencies.md
         file: app/build.gradle
         position: 4
 
-  # Step 2: User adds SDK dependencies
+# Step 3: User adds TomTom SDK dependencies
   - title: Add TomTom SDK dependencies
-    description: Add the TomTom SDK dependencies to app/build.gradle
+    description: Add the TomTom SDK dependencies to the module-level build.gradle
     event: push
     link: '{{ repoUrl }}/issues/2'
     actions:
@@ -69,14 +99,14 @@ steps:
         right: '%actions.fileContents%'
         else:
           - type: respond
-            with: 02.01-bad-dependencies.md
+            with: 02.02-bad-dependencies.md
             issue: Changes
       - type: createReview
         event: APPROVE
         body: approve.md
         pullRequest: Changes
 
-  # Step 3: Merge pull request
+  # Step 4: Merge pull request
   - title: Merge your pull request
     event: pull_request.closed
     description: Congrats on finishing the course!
