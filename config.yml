@@ -196,16 +196,33 @@ steps:
         body: 07.02-add-key-to-project.md
         file: app/src/main/AndroidManifest.xml
         position: 4
+
+  # Step 8
+  - title: Install the app on your Android phone
+    description: Install the app on your Android phone
+    event: push
+    link: '{{ repoUrl }}/pull/3'
+    actions:
+      - type: gate
+        left: '%payload.ref%'
+        operator: ===
+        right: refs/heads/display-map
+      - type: getPullRequest
+        pullRequest: Display map
+        action_id: metaPR3
+      - type: respond
+        with: 08.00-install-app.md
+        issue: Display map
       - type: createReview
         event: APPROVE
         body: approve.md
         pullRequest: Display map
 
-  # Step 7: Merge pull request
+  # Step 9: Merge pull request
   - title: Merge the 'Display map' pull request
     event: push
     description: Congrats on finishing the course!
     actions:
       - type: respond
-        with: 07.00-congrats.md
+        with: 09.00-congrats.md
         issue: Display map
