@@ -43,13 +43,12 @@ steps:
         with: 01.01-build-gradle.md
         issue: Changes
       - type: createPullRequestComment
-        pullRequest: Changes
         body: 02.00-add-dependencies.md
         file: app/build.gradle
         position: 3
 
   # Step 2: User adds dependencies
-  - title: Extend app/build.gradle
+  - title: Extend dependencies with TomTom SDK libraries
     description: Add the TomTom SDK dependencies to app/build.gradle
     event: push
     link: '{{ repoUrl }}/issues/2'
