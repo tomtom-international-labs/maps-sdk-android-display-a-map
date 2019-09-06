@@ -129,18 +129,21 @@ steps:
           - type: respond
             with: Make sure the title of your PR is "Display map"
             issue: Display map
+      - type: respond
+        with: 04.00-display-map.md
+        issue: Display map
       - type: createPullRequestComment
-        body: 04.02-update-mainactivity.md
-        file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
+        body: 04.01-display-map-layout.md
+        file: app/src/main/res/layout/activity_main.xml
         position: 4
+      - type: createPullRequestComment
+        body: 04.02-display-map-on-create.md
+        file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
+        position: 29
       - type: createReview
         event: APPROVE
         body: approve.md
-        pullRequest: Display map
-      - type: createReview
-        event: APPROVE
-        body: approve.md
-        pullRequest: Display map
+        pullRequest: Changes
 
   # Step 6: Merge pull request
   - title: Merge your pull request
@@ -148,5 +151,5 @@ steps:
     description: Congrats on finishing the course!
     actions:
       - type: respond
-        with: congrats.md
+        with: 04.10-congrats.md
         issue: Display map
