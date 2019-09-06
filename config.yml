@@ -60,24 +60,24 @@ steps:
       - type: getPullRequest
         pullRequest: Changes
         action_id: metaPR2
-      - type: getFileContents
-        action_id: fileContents
-        filename: 'build.gradle'
-      - type: gate
-        left: /^\s*url\s*\"https:\/\/maven.tomtom.com\:8443\/nexus\/content\/repositories\/releases.*\"/gm
-        operator: test
-        right: '%actions.fileContents%'
-        else:
-          - type: respond
-            with: 02.00-bad-tomtom-repository.md
-            issue: Changes
+      # - type: getFileContents
+      #   action_id: fileContents
+      #   filename: 'build.gradle'
+      # - type: gate
+      #   left: /^\s*url\s*\"https:\/\/maven.tomtom.com\:8443\/nexus\/content\/repositories\/releases.*\"/gm
+      #   operator: test
+      #   right: '%actions.fileContents%'
+      #   else:
+      #     - type: respond
+      #       with: 02.00-bad-tomtom-repository.md
+      #       issue: Changes
       - type: createPullRequestComment
         pullRequest: '%actions.metaPR2.data.number%'
         body: 02.02-add-dependencies.md
         file: app/build.gradle
         position: 4
 
-# Step 3: User adds TomTom SDK dependencies
+  # Step 3: User adds TomTom SDK dependencies
   - title: Add TomTom SDK dependencies
     description: Add the TomTom SDK dependencies to the module-level build.gradle
     event: push
@@ -90,17 +90,17 @@ steps:
       - type: getPullRequest
         pullRequest: Changes
         action_id: metaPR2
-      - type: getFileContents
-        action_id: fileContents
-        filename: 'app/build.gradle'
-      - type: gate
-        left: /^\s*implementation\s*\'com.tomtom.online:sdk-.*/gm
-        operator: test
-        right: '%actions.fileContents%'
-        else:
-          - type: respond
-            with: 02.02-bad-dependencies.md
-            issue: Changes
+      # - type: getFileContents
+      #   action_id: fileContents
+      #   filename: 'app/build.gradle'
+      # - type: gate
+      #   left: /^\s*implementation\s*\'com.tomtom.online:sdk-.*/gm
+      #   operator: test
+      #   right: '%actions.fileContents%'
+      #   else:
+      #     - type: respond
+      #       with: 02.02-bad-dependencies.md
+      #       issue: Changes
       - type: createReview
         event: APPROVE
         body: approve.md
