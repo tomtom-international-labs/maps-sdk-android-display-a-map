@@ -116,8 +116,8 @@ steps:
         issue: Changes
 
   # Step 4: Display a map
-  - title: Display a TomTom Map
-    description: Create an Android activity using the TomTom Map API to display a map
+  - title: Display a map - Extend the Layout
+    description: Extend the activity layout and add a MapFragment
     event: pull_request.opened
     link: '{{ repoUrl }}/pull/3'
     actions:
@@ -136,14 +136,28 @@ steps:
         body: 04.01-display-map-layout.md
         file: app/src/main/res/layout/activity_main.xml
         position: 4
+
+  # Step 5: Tell the MainActivity about the TomTom map
+  - title: Display a map - Extend the MainActivity
+    description: Extend the MainActivity to display a map
+    event: push
+    link: '{{ repoUrl }}/pull/3'
+    actions:
+      - type: gate
+        left: '%payload.ref%'
+        operator: ===
+        right: refs/heads/display-map
+      - type: getPullRequest
+        pullRequest: Display map
+        action_id: metaPR3
       - type: createPullRequestComment
-        body: 04.02-display-map-on-create.md
+        body: 05.00-display-map-on-create.md
         file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
         position: 29
       # - type: createReview
       #   event: APPROVE
       #   body: approve.md
-      #   pullRequest: Display map
+      #   pullRequest: Changes
 
   # Step 6: Merge pull request
   - title: Merge your pull request
