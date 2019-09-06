@@ -45,7 +45,7 @@ steps:
       - type: createPullRequestComment
         body: 02.00-add-dependencies.md
         file: app/build.gradle
-        position: 3
+        position: 4
 
   # Step 2: User adds dependencies
   - title: Extend dependencies with TomTom SDK libraries
