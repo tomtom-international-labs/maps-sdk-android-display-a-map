@@ -152,7 +152,7 @@ steps:
         action_id: metaPR3
       - type: createPullRequestComment
         pullRequest: '%actions.metaPR3.data.number%'
-        body: 05.00-display-map-mainactivity-0.md
+        body: 05.00-display-map-mainactivity.md
         file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
         position: 14
 
@@ -171,19 +171,27 @@ steps:
         action_id: metaPR3
       - type: createPullRequestComment
         pullRequest: '%actions.metaPR3.data.number%'
-        body: 05.00-display-map-mainactivity-1.md
+        body: 06.00-display-map-mainactivity.md
         file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
         position: 12
+      - type: respond
+        with: 06.02-request-map-key.md
+        issue: Display map
+      - type: createPullRequestComment
+        pullRequest: '%actions.metaPR3.data.number%'
+        body: 06.04-add-key-to-project.md
+        file: app/src/main/AndroidManifest.xml
+        position: 3
       - type: createReview
         event: APPROVE
         body: approve.md
         pullRequest: Display map
 
-  # Step 6: Merge pull request
-  - title: Merge your pull request
-    event: pull_request.closed
+  # Step 7: Merge pull request
+  - title: Merge the 'Display map' pull request
+    event: push
     description: Congrats on finishing the course!
     actions:
       - type: respond
-        with: 05.10-congrats.md
+        with: 07.00-congrats.md
         issue: Display map
