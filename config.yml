@@ -50,7 +50,7 @@ steps:
   # Step 2: User adds TomTom Maven repository
   - title: Add TomTom Maven repository
     description: Add the TomTom Maven repository to top-level build.gradle
-    event: push
+    event: pull_request.synchronize
     link: '{{ repoUrl }}/pull/2'
     actions:
       - type: gate
@@ -80,7 +80,7 @@ steps:
   # Step 3: User adds TomTom SDK dependencies
   - title: Add TomTom SDK dependencies
     description: Add the TomTom SDK dependencies to the module-level build.gradle
-    event: push
+    event: pull_request.synchronize
     link: '{{ repoUrl }}/pull/2'
     actions:
       - type: gate
