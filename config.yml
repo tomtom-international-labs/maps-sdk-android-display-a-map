@@ -140,10 +140,10 @@ steps:
         body: 04.02-display-map-on-create.md
         file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
         position: 29
-      - type: createReview
-        event: APPROVE
-        body: approve.md
-        pullRequest: Changes
+      # - type: createReview
+      #   event: APPROVE
+      #   body: approve.md
+      #   pullRequest: Display map
 
   # Step 6: Merge pull request
   - title: Merge your pull request
