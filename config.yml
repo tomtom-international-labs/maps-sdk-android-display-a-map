@@ -10,7 +10,7 @@ description: >-
   In this course you will learn how to create an Android application that displays a TomTom Map
 template:
   repo: maps-sdk-android-search-along-a-route-template
-  name: lab-maps-sdk-android-search-along-a-route
+  name: lab-maps-sdk-android-display-a-map
 before:
   - type: createIssue
     title: Welcome
