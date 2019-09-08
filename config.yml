@@ -3,9 +3,7 @@ tagline: 'Take your first steps in using the TomTom Map SDK'
 tags:
   - android
   - tomtom-sdk
-  - routing
   - maps
-  - search
 description: >-
   In this course you will learn how to create an Android application that displays a TomTom Map
 template:
@@ -152,7 +150,7 @@ steps:
       - type: createPullRequestComment
         pullRequest: '%actions.metaPR3.data.number%'
         body: 05.00-display-map-mainactivity.md
-        file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
+        file: app/src/main/java/com/tomtom/online/sdk/displaymap/MainActivity.java
         position: 14
 
   # Step 6:
@@ -171,7 +169,7 @@ steps:
       - type: createPullRequestComment
         pullRequest: '%actions.metaPR3.data.number%'
         body: 06.00-display-map-mainactivity.md
-        file: app/src/main/java/com/tomtom/online/sdk/searchalongaroute/MainActivity.java
+        file: app/src/main/java/com/tomtom/online/sdk/displaymap/MainActivity.java
         position: 12
 
   # Step 7
