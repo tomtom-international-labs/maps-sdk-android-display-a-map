@@ -1,25 +1,16 @@
-![TomTom Logo](assets/tomtom.png)
+<p align="center"><img alt="TomTom Logo" src="assets/tomtom.png"></p>
 
-# Maps SDK Android - Create Map Application using TomTom SDK in less than 30 minutes
+# Course: TomTom Maps SDK for Android - Display a Map
 
-This tutorial shows how to use TomTom Maps SDK for Android.
+This repository powers the Learning Lab course [_TomTom Maps SDK for Android - Display a Map_](https://lab.github.com/tomtom-international-labs/tomtom-maps-sdk-for-android-display-a-map).
 
-## Build the next generation of location experiences
+Every Learning Lab course is made up of:
 
-In order to get a fully functional application you need to obtain a free API key
-by completing the registration on [TomTom Developer Portal](
-https://developer.tomtom.com/user/register).
+- a [course repository](https://github.com/tomtom-international-labs/maps-sdk-android-display-a-map), and
+- a [template repository](https://github.com/tomtom-international-labs/maps-sdk-android-display-a-map-template)
 
-**WARNING:** Keep in mind that the API key is personal and can't be shared nor pushed to the public repository. By doing that you would violate [terms and conditions](
-https://developer.tomtom.com/terms-and-conditions).
-
-## Get yourself familiar with TomTom Documentation
-
-- [Maps Android SDK](https://developer.tomtom.com/maps-android-sdk/map-examples)
-- [Routing API](https://developer.tomtom.com/routing-api/routing-api-documentation)
-- [Search API](https://developer.tomtom.com/search-api/search-api-documentation)
-- [Traffic API](https://developer.tomtom.com/traffic-api/traffic-api-documentation)
-- [Geofencing API](https://developer.tomtom.com/geofencing-api-public-preview/geofencing-documentation)
+For more information on the goals of this course, check out the [`course-details.md`](course-details.md).
 
 ## Special thanks
- This learning lab wouldn't be possible without our awesome [contributors](CONTRIBUTORS.md).
+
+This learning lab wouldn't be possible without our awesome [contributors](CONTRIBUTORS.md).
